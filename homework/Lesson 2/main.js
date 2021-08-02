@@ -38,16 +38,19 @@ switch (x){
 
 // Задание 2 //
 
-let a = prompt ('Введите число', '');
+let x = prompt ('Введите число', '');
 let sum = 0;
-
-for ( let i = 0; i < a; i++){
+for ( let i = 1; i >= x; i++){
     sum = sum + i;
-    console.log(sum);
+} 
+console.log(sum);
+
+//2.1//
+
+let x = prompt ('Введите число', '');
+
+for ( let i = 0; i <= x; i++);{
+    if (i % 2 == 0) {
+        console.log(i);
+    }
 }
-
-
-// 2.1 //
-
-
-
