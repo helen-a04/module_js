@@ -1,12 +1,22 @@
 
 //Задание 1
 
-let number = Math.round(Math.random() * 100);
+let a = +prompt ('Число 1', '');
+let b = +prompt ('Число 2', '');
+let c = +prompt ('Число 3', '');
 
-let number2 = Math.round(Math.random() * 100);
+function sum(){
+    console.log( a + b + c );
+}
 
-let number3 = Math.round(Math.random() * 100);
-
-console.log(number + number2 + number3);
+sum();
 
 //Задание 2
+
+let x = +prompt ('Введите число', '');
+
+function summa(){
+        console.log(x*(x+1)/2);
+}
+
+summa();
