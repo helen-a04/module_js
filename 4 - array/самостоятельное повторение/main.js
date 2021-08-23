@@ -203,3 +203,78 @@ let arr = ['Red', 'Blue', 'Green', ];
 let arrOne = arr.concat('Pink');
 console.log(arrOne);
 
+
+// Поиск в массиве 
+
+// Методы indexOf / lastIndexOf / included
+// аналоги строковым методам
+/* 
+1. arr.indexOf (item, from) ищет item, начиная с индекса from, 
+   и возвращает индекс, на котором был найден искомый элемент, 
+   в противном случае -1. 
+
+2. arr.lastIndexOf (item, from) - то же самое, но ищет справа налево
+3. arr.includes (item, from) - ищет item, начиная с индекса from,
+   и возвращает true, если поиск успешен 
+*/
+
+let arr = ['Mark', 'Oleg', 'Alisa',];
+
+// indexOf
+console.log(arr.indexOf('Oleg')); // 1
+console.log(arr.indexOf('Pavel')); // -1
+console.log(arr.indexOf('Oleg', 2)); // -1 (2 - значит начиная со второй позиции)
+
+// includes
+console.log(arr.includes('Oleg')); // true
+console.log(arr.includes('Pavel'));  // false
+console.log(arr.includes('Oleg', 2)); // false
+
+
+// Методы find / findIndex
+// Поиск в массиве объектов с определенным условием
+/* 
+// Синтаксис 
+let result = arr.find(function(item, index, array) {
+  // true - возвращает текущий элемент и перебор прерывается
+  // undefined - если все итерации оказались ложными
+});
+*/
+
+let arr = [
+    {name: 'Mark', age: 18},
+    {name: 'Oleg', age: 23},
+    {name: 'Alisa', age: 'Не скажу'},
+]
+
+let result = arr.find(function (item, index, array){
+    return item.age === 18;
+});
+
+console.log(result); // {name: 'Mark', age: 18}
+
+// findIndex - возвращает номер позиции 
+
+let resultOne = arr.findIndex(item => item.age === 18);
+console.log(resultOne); // 0
+
+
+// filter
+// Метод ищет все элементы, на которых функция-колбэк вернет true
+/*
+let result = arr.filter(function (item, index, array) {
+    // true - элемент добавляется к результату, и перебор продолжается
+    // возвращается пустой массив в случае, если ничего не найдено
+});
+*/
+
+let arr = [
+    {name: 'Mark', age: 18},
+    {name: 'Oleg', age: 23},
+    {name: 'Alisa', age: 'Не скажу'},
+]
+
+let result = arr.filter(function (item, index, array) {
+    return item.age >= 18;
+});
+console.log(result);
