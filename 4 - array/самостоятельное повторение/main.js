@@ -278,3 +278,90 @@ let result = arr.filter(function (item, index, array) {
     return item.age >= 18;
 });
 console.log(result);
+
+// Сортировка массивов
+
+// Метод sort(fn)
+// сортирует массив на месте, меняя в нем порядок элементов. 
+
+// Сортивка слов
+let arrOne = ['Mark', 'Oleg', 'Alisa']; // -> сортировка по алфавиту
+console.log(arrOne.sort());
+
+// Сортировка чисел
+let arrTwo = [8, 22, 16]; // -> 16, 22, 8
+console.log(arrTwo.sort());
+
+// По умолчанию элементы сортируются как строки.
+// Для строк применяется лексиграфический порядок,
+// и действительно выходит, что 8 > 22
+console.log("8" > "22");
+
+// Функция сортировки
+function compareNumbers(a, b) {
+    console.log(`Compare ${a} and ${b}`);
+    if (a > b) return 1;
+    if (a == b) return 0;
+    if (a < b) return -1;
+}
+
+console.log(arrTwo.sort(compareNumbers));
+
+
+// Метод reverse
+// меняет порядок элементов в массиве на обратный
+
+let arrOne = ['Mark', 'Oleg', 'Alisa'];
+console.log(arrOne.reverse());
+
+
+// Преобразование массивов
+
+// Метод map
+// вызывает функцию для каждого элемента массива
+// и возвращает массив результатов выполнения этой функции
+/*
+let result = arr.map(function(item, index, array) {
+    // возвращает новое значение вместо элемента
+});
+*/
+
+let arr = ['Mark', 'Oleg', 'Alisa'];
+
+let result = arr.map(function(item, index, array) {
+    return item[0];
+});
+
+console.log(result);
+console.log(arr);
+
+
+// Методы split и join
+// Метод split преобразовывает строку в массив по заданному разделителю
+// Синтаксис: str.split(delim)
+
+let str = 'Mark, Oleg, Alisa';
+
+let arr = atr.split(',');
+console.log(arr);
+
+// Метод join преобразовывает массив в строку с заданным разделителем
+// Синтаксис: arr.join(glue)
+
+let arr = ['Mark', 'Oleg', 'Alisa'];
+let str = arr.join(',');
+console.log(str);
+
+// Проверка Array.isArray()
+
+let obj = {};
+let arr = [];
+
+console.log(typeof obj);
+console.log(typeof arr);
+
+if (Array.isArray(arr)) {
+    console.log('It is Array!');
+} else {
+    console.log('It is not Array :(');
+}
